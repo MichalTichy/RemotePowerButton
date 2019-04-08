@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotePowerButton.IO", "RemotePowerButton.IO\RemotePowerButton.IO.csproj", "{BBE185C7-D9BA-417D-B8E8-CC0368B86916}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotePowerButton.Forwarder", "RemotePowerButton.Forwarder\RemotePowerButton.Forwarder.csproj", "{D88C93C9-F862-4B99-9415-580DB0BC8182}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotePowerButton.API", "RemotePowerButton.API\RemotePowerButton.API.csproj", "{99E268E8-6EB3-4417-9D63-2E11AE2ED642}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BBE185C7-D9BA-417D-B8E8-CC0368B86916}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBE185C7-D9BA-417D-B8E8-CC0368B86916}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBE185C7-D9BA-417D-B8E8-CC0368B86916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88C93C9-F862-4B99-9415-580DB0BC8182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88C93C9-F862-4B99-9415-580DB0BC8182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88C93C9-F862-4B99-9415-580DB0BC8182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88C93C9-F862-4B99-9415-580DB0BC8182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99E268E8-6EB3-4417-9D63-2E11AE2ED642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E268E8-6EB3-4417-9D63-2E11AE2ED642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E268E8-6EB3-4417-9D63-2E11AE2ED642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E268E8-6EB3-4417-9D63-2E11AE2ED642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
