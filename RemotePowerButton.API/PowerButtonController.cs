@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Results;
 using RemotePowerButton.IO;
 
 namespace RemotePowerButton.API
@@ -6,19 +7,30 @@ namespace RemotePowerButton.API
     public class PowerButtonController : ApiController
     {
         static PowerButton powerButton = new PowerButton();
+        static TokenValidator tokenValidator=new TokenValidator();
 
-        [HttpGet]
+        [HttpPost]
         [Route("powerButton/short")]
-        public void ShortPowerButtonPress()
+        public IHttpActionResult ShortPowerButtonPress([FromBody]string token)
         {
+            if (!tokenValidator.IsValid(token))
+                return Unauthorized();
+
             powerButton.PressPowerButton();
+
+            return Ok();
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("powerButton/long")]
-        public void LongPowerButtonPress()
+        public IHttpActionResult LongPowerButtonPress([FromBody]string token)
         {
+            if (!tokenValidator.IsValid(token))
+                return Unauthorized();
+
             powerButton.PressPowerButton(10000);
+
+            return Ok();
         }
     }
 }
