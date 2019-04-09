@@ -1,4 +1,6 @@
 ﻿using System.Configuration;
+using System.Diagnostics;
+
 namespace RemotePowerButton.API
 {
     public class TokenValidator

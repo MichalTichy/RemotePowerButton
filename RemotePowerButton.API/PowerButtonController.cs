@@ -11,7 +11,7 @@ namespace RemotePowerButton.API
 
         [HttpPost]
         [Route("powerButton/short")]
-        public IHttpActionResult ShortPowerButtonPress([FromBody]string token)
+        public IHttpActionResult ShortPowerButtonPress([FromUri]string token)
         {
             if (!tokenValidator.IsValid(token))
                 return Unauthorized();
@@ -23,13 +23,12 @@ namespace RemotePowerButton.API
 
         [HttpPost]
         [Route("powerButton/long")]
-        public IHttpActionResult LongPowerButtonPress([FromBody]string token)
+        public IHttpActionResult LongPowerButtonPress([FromUri]string token)
         {
             if (!tokenValidator.IsValid(token))
                 return Unauthorized();
 
             powerButton.PressPowerButton(10000);
-
             return Ok();
         }
     }

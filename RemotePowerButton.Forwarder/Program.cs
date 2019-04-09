@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using RemotePowerButton.IO;
 
@@ -9,7 +10,8 @@ namespace RemotePowerButton.Forwarder
         static void Main(string[] args)
         {
             var PowerBtn = new PowerButton();
-            
+            Console.WriteLine("Started");
+
             while (true)
             {
                 if (PowerBtn.IsPowerButtonPressed())
