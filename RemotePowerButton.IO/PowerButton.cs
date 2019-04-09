@@ -19,7 +19,10 @@ namespace RemotePowerButton.IO
 
         public PowerButton()
         {
-            GpioController.SetPinValue(HwPowerBtnCounterPart,true);
+            if (!GpioController.GetPinValue(HwPowerBtnCounterPart))
+            {
+                GpioController.SetPinValue(HwPowerBtnCounterPart,true,Timeout.Infinite);
+            }
         }
 
         public void PressPowerButton(int duration = 1000)
