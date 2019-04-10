@@ -70,7 +70,6 @@ namespace RemotePowerButton.IO
             File.Delete(CreateLockFilePath(Pin));
 
             Debug.WriteLine($"{Enum.GetName(typeof(BcmPin), Pin)} unlocked.");
-
         }
     }
 }

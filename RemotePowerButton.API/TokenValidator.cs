@@ -9,7 +9,7 @@ namespace RemotePowerButton.API
 
         public TokenValidator()
         {
-            validToken = ConfigurationManager.AppSettings["securityToken"];
+            validToken = ConfigurationManager.AppSettings["accessToken"];
         }
         public bool IsValid(string token)
         {

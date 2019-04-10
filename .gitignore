@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /RemotePowerButton.API/App.Release.config
+/RemotePowerButton.APP/App.Release.config
