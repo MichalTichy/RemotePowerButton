@@ -15,11 +15,14 @@ namespace RemotePowerButton.Forwarder
             while (true)
             {
                 if (PowerBtn.IsPowerButtonPressed())
+                {
+                    Debug.WriteLine("Power button pressed. Waiting for release.");
                     PowerBtn.PushPowerButton();
-                else
-                    PowerBtn.ReleasePowerButton();
+                    while (PowerBtn.IsPowerButtonPressed()) Thread.Sleep(10);
 
-                Thread.Sleep(100);
+                    Debug.WriteLine("Power button released.");
+                    PowerBtn.ReleasePowerButton();
+                }
             }
         }
     }

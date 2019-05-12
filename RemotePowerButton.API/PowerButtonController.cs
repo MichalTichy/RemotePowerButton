@@ -31,5 +31,12 @@ namespace RemotePowerButton.API
             powerButton.PressPowerButton(10000);
             return Ok();
         }
+
+        [HttpGet]
+        [Route("status")]
+        public IHttpActionResult GetStatus()
+        {
+            return Ok();
+        }
     }
 }

@@ -18,8 +18,6 @@ namespace RemotePowerButton.IO
         {
             LockStream = lockStream;
             Pin = pin;
-            mutex = new Mutex(false, "test");
-            mutex.WaitOne();
         }
 
         public static GpioPinLock ObtainLock(BcmPin pin)

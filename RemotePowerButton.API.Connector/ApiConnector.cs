@@ -27,5 +27,11 @@ namespace RemotePowerButton.API.Connector
             return httpResponseMessage;
 
         }
+
+        public async Task<bool> IsOnline()
+        {
+            var httpResponseMessage = await client.SendAsync(new HttpRequestMessage(HttpMethod.Get, $@"{ApiAddress}/status"));
+            return httpResponseMessage.IsSuccessStatusCode;
+        }
     }
 }

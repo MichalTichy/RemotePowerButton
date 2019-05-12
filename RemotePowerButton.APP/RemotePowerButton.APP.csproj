@@ -104,7 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="powerbtn.ico" />
-    <Content Include="simpleicons_interface_power_symbol_in_a_circle_in_black_and_white_svg_pAD_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.20\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.20\build\Microsoft.VisualStudio.SlowCheetah.targets')" />

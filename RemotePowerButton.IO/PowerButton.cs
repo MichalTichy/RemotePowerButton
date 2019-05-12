@@ -17,13 +17,6 @@ namespace RemotePowerButton.IO
         protected const BcmPin HardwarePowerBtn = BcmPin.Gpio22;
         protected const BcmPin HwPowerBtnCounterPart = BcmPin.Gpio23;
 
-        public PowerButton()
-        {
-            if (!GpioController.GetPinValue(HwPowerBtnCounterPart))
-            {
-                GpioController.SetPinValue(HwPowerBtnCounterPart,true,Timeout.Infinite);
-            }
-        }
 
         public void PressPowerButton(int duration = 1000)
         {
@@ -32,6 +25,7 @@ namespace RemotePowerButton.IO
 
         public bool IsPowerButtonPressed()
         {
+            GpioController.SetPinValue(HwPowerBtnCounterPart,true);
             return GpioController.GetPinValue(HardwarePowerBtn);
         }
 

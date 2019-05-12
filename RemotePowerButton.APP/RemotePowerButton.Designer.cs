@@ -32,6 +32,7 @@
             this.butLong = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tbOnlineStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             this.butShort.Location = new System.Drawing.Point(12, 12);
             this.butShort.Name = "butShort";
-            this.butShort.Size = new System.Drawing.Size(158, 23);
+            this.butShort.Size = new System.Drawing.Size(248, 23);
             this.butShort.TabIndex = 0;
             this.butShort.Text = "Short";
             this.butShort.UseVisualStyleBackColor = true;
@@ -47,9 +48,9 @@
             // 
             // butLong
             // 
-            this.butLong.Location = new System.Drawing.Point(12, 41);
+            this.butLong.Location = new System.Drawing.Point(266, 12);
             this.butLong.Name = "butLong";
-            this.butLong.Size = new System.Drawing.Size(158, 23);
+            this.butLong.Size = new System.Drawing.Size(248, 23);
             this.butLong.TabIndex = 1;
             this.butLong.Text = "Long";
             this.butLong.UseVisualStyleBackColor = true;
@@ -58,23 +59,33 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbOnlineStatus,
             this.statusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 71);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 39);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(182, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(521, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 3;
             // 
             // statusLabel
             // 
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(0, 17);
+            this.statusLabel.Size = new System.Drawing.Size(465, 17);
+            this.statusLabel.Spring = true;
+            this.statusLabel.Text = " ";
+            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbOnlineStatus
+            // 
+            this.tbOnlineStatus.Name = "tbOnlineStatus";
+            this.tbOnlineStatus.Size = new System.Drawing.Size(10, 17);
+            this.tbOnlineStatus.Text = " ";
             // 
             // RemotePowerButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(182, 93);
+            this.ClientSize = new System.Drawing.Size(521, 61);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.butLong);
             this.Controls.Add(this.butShort);
@@ -96,6 +107,7 @@
         private System.Windows.Forms.Button butLong;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel tbOnlineStatus;
     }
 }
 

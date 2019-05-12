@@ -24,6 +24,26 @@ namespace RemotePowerButton.APP
             var apiAddress = ConfigurationManager.AppSettings["apiAddress"];
             var accessToken = ConfigurationManager.AppSettings["accessToken"];
             ApiConnector = new ApiConnector(apiAddress, accessToken);
+
+            var timer=new Timer();
+            timer.Tick += UpdateOnlineStatus;
+            timer.Interval = 500;
+            timer.Start();
+        }
+
+        private async void UpdateOnlineStatus(object sender, EventArgs e)
+        {
+            var isOnline = await ApiConnector.IsOnline();
+            if (isOnline)
+            {
+                tbOnlineStatus.Text = "ONLINE";
+                tbOnlineStatus.ForeColor=Color.Green;
+            }
+            else
+            {
+                tbOnlineStatus.Text = "OFFLINE";
+                tbOnlineStatus.ForeColor = Color.Red;
+            }
         }
 
         private async void ButShort_Click(object sender, EventArgs e)
