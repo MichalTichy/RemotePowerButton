@@ -25,9 +25,10 @@ namespace RemotePowerButton.APP
             var accessToken = ConfigurationManager.AppSettings["accessToken"];
             ApiConnector = new ApiConnector(apiAddress, accessToken);
 
+            UpdateOnlineStatus(null,null);
             var timer=new Timer();
             timer.Tick += UpdateOnlineStatus;
-            timer.Interval = 500;
+            timer.Interval = 5000;
             timer.Start();
         }
 
@@ -53,7 +54,7 @@ namespace RemotePowerButton.APP
 
         private async void ButLong_Click(object sender, EventArgs e)
         {
-            await PerformCommand(async () => await ApiConnector.SendShortButtonPress());
+            await PerformCommand(async () => await ApiConnector.SendLongButtonPress());
         }
 
         private async Task PerformCommand(Func<Task<HttpResponseMessage>> apiCall)
