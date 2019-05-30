@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -30,8 +31,16 @@ namespace RemotePowerButton.API.Connector
 
         public async Task<bool> IsOnline()
         {
-            var httpResponseMessage = await client.SendAsync(new HttpRequestMessage(HttpMethod.Get, $@"{ApiAddress}/status"));
-            return httpResponseMessage.IsSuccessStatusCode;
+            try
+            {
+                var httpResponseMessage = await client.SendAsync(new HttpRequestMessage(HttpMethod.Get, $@"{ApiAddress}/status"));
+
+                return httpResponseMessage.IsSuccessStatusCode;
+            }
+            catch (HttpRequestException)
+            {
+                return false;
+            }
         }
     }
 }
